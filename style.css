@@ -122,3 +122,11 @@ img {
   top: -1.25rem;
   right: -1.25rem;
 }
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #29fd2f;
+}
