@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: 'Open Sans', Helvetica, sans-serif;
   background: #e5e5e5;
 }
 
@@ -18,7 +18,8 @@ h2 {
 }
 
 p {
-  line-height: 120%;
+  line-height: 130%;
+  margin-bottom: 3rem;
 }
 
 a {
@@ -28,11 +29,10 @@ a {
 
 img {
   width: 100%;
-  border-bottom: 2px solid #fff;
 }
 
 .wrap {
-  width: 90%;
+  width: 95%;
   max-width: 50rem;
   margin: 0 auto;
 }
