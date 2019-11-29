@@ -58,6 +58,10 @@ img {
   color: #fff;
 }
 
+.splash {
+  border-bottom: 2px solid #fff;
+}
+
 .footer {
   border-top: 2px solid #fff;
   text-align: center;
@@ -84,14 +88,18 @@ img {
   vertical-align: top;
 }
 
+.image {
+  margin-bottom: 3vh;
+}
+
 .image-1 {
-  width: 25vh;
+  width: 15vh;
 }
 
 .image-2 {
-  width: 35vh;
+  width: 25vh;
 }
 
 .image-3 {
-  width: 45vh;
+  width: 35vh;
 }
