@@ -74,6 +74,8 @@
         <div v-for="image in column">
           <div :class="'image image-' + image.size">
             <img :src="'images/' + image.index + '_web.jpg'">
+            <div class="audio-toggle" v-if="!image.noaudio" is="audio-player" :image="image.index"></div>
+            <audio v-if="!image.noaudio" :src="'audio/' + image.index + '_audio.mp3'" :id="'audio-' + image.index"></audio>
           </div>
         </div>
       </div>
