@@ -1,21 +1,21 @@
 /* global Vue */
 const images = [
-  [{ size: 2, noaudio: true }, { size: 1, noaudio: true }, { size: 3 }],
-  [{ size: 1 }, { size: 2 }, { size: 1, noaudio: true }],
-  [{ size: 3 }, { size: 3 }],
-  [{ size: 1 }, { size: 2 }, { size: 1 }],
-  [{ size: 2 }, { size: 3, noaudio: true }, { size: 1 }],
-  [{ size: 3 }, { size: 1 }],
-  [{ size: 2 }, { size: 3 }],
-  [{ size: 1 }],
-  [{ size: 2, noaudio: true }, { size: 3 }]
+  [{ size: 2, noaudio: true }, { size: 1, noaudio: true, left: 10 }, { size: 3, top: 2 }],
+  [{ size: 1, top: 12, left: -10 }, { size: 2, top: 12, left: 1 }, { size: 1, noaudio: true, top: 22, left: 1 }],
+  [{ size: 3, top: -1.5, left: -12 }, { size: 3, top: 10, left: 2 }],
+  [{ size: 1, left: 5 }, { size: 2, left: -12 }, { size: 1, top: 8, left: 8.5 }],
+  [{ size: 2, top: 4.5, left: -4 }, { size: 3, noaudio: true, top: 6, left: 5 }, { size: 1, top: 10, left: 13 }],
+  [{ size: 3, top: -2, left: -8 }, { size: 1, top: 25, left: -2 }],
+  [{ size: 2, top: 26, left: -13 }, { size: 3, top: 25 }],
+  [{ size: 1, top: 18, left: -16 }],
+  [{ size: 2, noaudio: true, top: 4, left: -14 }, { size: 3, top: 9, left: -9 }]
 ]
 
 let index = 0
 
-for (column of images) {
-  for (image of column) {
-    index ++
+for (const column of images) {
+  for (const image of column) {
+    index++
     image.index = index
   }
 }

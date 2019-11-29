@@ -72,7 +72,7 @@
     <div class="audio-container">
       <div v-for="column, columnIndex in images" class="audio-column">
         <div v-for="image in column">
-          <div :class="'image image-' + image.size">
+          <div :class="'image image-' + image.size" :style="'top: ' + image.top + 'vh; left: ' + image.left + 'vh'">
             <img :src="'images/' + image.index + '_web.jpg'">
             <div class="audio-toggle" v-if="!image.noaudio" is="audio-player" :image="image.index"></div>
             <audio v-if="!image.noaudio" :src="'audio/' + image.index + '_audio.mp3'" :id="'audio-' + image.index"></audio>

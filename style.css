@@ -84,7 +84,7 @@ img {
 .audio-column {
   display: inline-block;
   color: #fff;
-  padding-bottom: 3vh;
+  padding: 2vh 0 10vh;
   margin: 0.5rem 1rem;
   vertical-align: top;
 }
