@@ -130,3 +130,15 @@ img {
   height: 3px;
   background: #29fd2f;
 }
+
+.colophon {
+  background: #000;
+  color: #555;
+  text-align: center;
+  padding: 0.25rem 0;
+}
+
+.colophon a {
+  color: #555;
+  text-decoration: underline;
+}
