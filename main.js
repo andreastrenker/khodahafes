@@ -1,6 +1,6 @@
 /* global Vue */
 const images = [
-  [{ size: 2, noaudio: true }, { size: 1, noaudio: true, left: 10 }, { size: 3, top: 2 }],
+  [{ size: 2 }, { size: 1, left: 10 }, { size: 3, noaudio: true, top: 2 }],
   [{ size: 1, top: 12, left: -10 }, { size: 2, top: 12, left: 1 }, { size: 1, noaudio: true, top: 22, left: 1 }],
   [{ size: 3, top: -1.5, left: -12 }, { size: 3, top: 10, left: 2 }],
   [{ size: 1, left: 5 }, { size: 2, left: -12 }, { size: 1, top: 8, left: 8.5 }],
