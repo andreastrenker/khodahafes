@@ -166,4 +166,8 @@ img {
     columns: 1;
     font-size: 1rem;
   }
+
+  .audio-player.playing .image {
+    width: 35vh;
+  }
 }
