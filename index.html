@@ -25,15 +25,19 @@
           Kunstraum Mitterhofer<br>Innichen-San Candido, Italy
         </div>
         <div>
-          30.11.2019 <br>&mdash;<br> 31.01.2020
+          30.11.2019 <br>&mdash;<br> 28.02.2020<br><em>(now extended as online exhibition)</em>
         </div>
       </div>
     </div>
   </div>
+  <div class="wrap notice">
+    Due to the COVID-19 pandemic and the resulting inaccessibility of the gallery, the exhibition has now been made
+		available on this website as an online exhibition. We suggest to use the mobile version for this purpose.
+  </div>
 
   <img src="images/splash.jpg" class="splash">
 
-  <div class="wrap">
+  <div class="wrap description">
     <p>
       The photo exhibition <em>khodahafes</em> (Persian:
       See you again) by designer and documentary
@@ -71,11 +75,7 @@
     <div class="audio-container">
       <div v-for="column, columnIndex in images" class="audio-column">
         <div v-for="image in column">
-          <div :class="'image image-' + image.size" :style="'top: ' + image.top + 'vh; left: ' + image.left + 'vh'">
-            <img :src="'images/' + image.index + '_web.jpg'">
-            <div class="audio-toggle" v-if="!image.noaudio" is="audio-player" :image="image.index"></div>
-            <audio v-if="!image.noaudio" :src="'audio/' + image.index + '_audio.mp3'" :id="'audio-' + image.index"></audio>
-          </div>
+          <div class="audio-player" is="audio-player" :image="image"></div>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
   <div class="footer">
     <a href="mailto:andreas-trenker@hotmail.com">andreas-trenker@hotmail.com</a>
   </div>
-  
+
   <div class="colophon">
     <small>programming by <a href="https://nuel.work" target="_blank">nuel</a></small>
   </div>

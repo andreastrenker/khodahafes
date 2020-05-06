@@ -32,9 +32,15 @@ Vue.component('audio-player', {
     }
   },
   template: `
-    <div @click="toggle">
-      <div class="progress-bar" :style="'width: ' + percent + '%'"></div>
-      <img :src="'images/audio-' + (playing ? 'on' : 'off') + '.png'">
+    <div :class="playing ? 'playing' : ''">
+      <div :class="'image image-' + image.size" :style="'top: ' + image.top + 'vh; left: ' + image.left + 'vh'">
+        <img :src="'images/' + image.index + '_web.jpg'">
+        <div class="audio-toggle" @click="toggle">
+          <div class="progress-bar" :style="'width: ' + percent + '%'"></div>
+          <img :src="'images/audio-' + (playing ? 'on' : 'off') + '.png'">
+        </div>
+        <audio v-if="!image.noaudio" :src="'audio/' + image.index + '_audio.mp3'" :id="'audio-' + image.index"></audio>
+      </div>
     </div>
   `,
   methods: {
@@ -66,12 +72,15 @@ Vue.component('audio-player', {
     }
   },
   mounted: function () {
-    this.audio = document.getElementById('audio-' + this.$props.image)
-    this.audio.addEventListener('playing', (_event) => {
-      const duration = _event.target.duration
+    if (this.$props.image.noaudio) {
+      return
+    }
+    this.audio = document.getElementById('audio-' + this.$props.image.index)
+    this.audio.addEventListener('playing', event => {
+      const duration = event.target.duration
       this.advance(duration, this.audio)
     })
-    this.audio.addEventListener('pause', (_event) => {
+    this.audio.addEventListener('pause', event => {
       clearTimeout(this.timer)
     })
   }
