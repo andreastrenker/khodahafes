@@ -75,7 +75,7 @@
     <div class="audio-container">
       <div v-for="column, columnIndex in images" class="audio-column">
         <div v-for="image in column">
-          <div class="audio-player" is="audio-player" :image="image"></div>
+          <div class="audio-player" is="audio-player" :image="image" :should-play="image.index === nowPlaying" @switch-to="switchTo"></div>
         </div>
       </div>
     </div>

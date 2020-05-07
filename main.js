@@ -21,7 +21,7 @@ for (const column of images) {
 }
 
 Vue.component('audio-player', {
-  props: ['image'],
+  props: ['image', 'shouldPlay'],
   data: () => {
     return {
       playing: false,
@@ -35,7 +35,7 @@ Vue.component('audio-player', {
     <div :class="playing ? 'playing' : ''">
       <div :class="'image image-' + image.size" :style="'top: ' + image.top + 'vh; left: ' + image.left + 'vh'">
         <img :src="'images/' + image.index + '_web.jpg'">
-        <div class="audio-toggle" @click="toggle">
+        <div v-if="!image.noaudio" class="audio-toggle" @click="toggle">
           <div class="progress-bar" :style="'width: ' + percent + '%'"></div>
           <img :src="'images/audio-' + (playing ? 'on' : 'off') + '.png'">
         </div>
@@ -45,13 +45,7 @@ Vue.component('audio-player', {
   `,
   methods: {
     toggle: function () {
-      this.playing = !this.playing
-
-      if (!this.audio) {
-        return
-      }
-
-      this.audio[this.playing ? 'play' : 'pause']()
+      this.$emit('switch-to', this.playing ? null : this.$props.image.index)
     },
 
     advance: function (duration, element) {
@@ -83,12 +77,24 @@ Vue.component('audio-player', {
     this.audio.addEventListener('pause', event => {
       clearTimeout(this.timer)
     })
+  },
+  watch: {
+    shouldPlay (value) {
+      this.playing = value
+      this.audio[value ? 'play' : 'pause']()
+    }
   }
 })
 
 const app = new Vue({
   el: '#app',
   data: {
-    images
+    images,
+    nowPlaying: null
+  },
+  methods: {
+    switchTo (index) {
+      this.nowPlaying = index
+    }
   }
 })
